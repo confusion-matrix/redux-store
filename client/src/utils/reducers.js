@@ -15,7 +15,7 @@ import {
 export const reducer = (state, action) => {
   switch (action.type) {
     // TODO: Add a comment describing the functionality of the UPDATE_PRODUCTS case
-    // Your comment here
+    // If the type value is the same as the input value, return a new state object with an updated products array.
     case UPDATE_PRODUCTS:
       return {
         ...state,
@@ -35,7 +35,7 @@ export const reducer = (state, action) => {
         cart: [...state.cart, ...action.products],
       };
     // TODO: Add a comment describing the functionality of the UPDATE_CART_QUANTITY case
-    // Your comment here
+    // update the purchaseQuatity property if the input matches an existing product
     case UPDATE_CART_QUANTITY:
       return {
         ...state,
@@ -49,7 +49,7 @@ export const reducer = (state, action) => {
       };
 
     // TODO: Add a comment describing the functionality of the REMOVE_FROM_CART case
-    // Your comment here
+    // remove the products from the cart that don't match the input product to remove
     case REMOVE_FROM_CART:
       let newState = state.cart.filter((product) => {
         return product._id !== action._id;
@@ -87,7 +87,7 @@ export const reducer = (state, action) => {
       };
 
     // TODO: Add a comment describing what the default case is for
-    // Your comment here
+    // If it's none of these actions match, do not perform any updates or changes on the state
     default:
       return state;
   }
